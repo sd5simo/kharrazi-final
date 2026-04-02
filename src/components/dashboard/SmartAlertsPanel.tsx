@@ -39,7 +39,7 @@ export default function SmartAlertsPanel({ maxItems = 5, compact = false }: { ma
         const cfg = TYPE_CONFIG[alert.type];
         return (
           <div key={alert.id} className={cn("rounded-xl border p-4 relative group", cfg.border, cfg.bg)}>
-            <button onClick={() => setDismissed((d) => new Set([...d, alert.id]))}
+            <button onClick={() => setDismissed((d) => new Set([...Array.from(d), alert.id]))}
               className="absolute top-3 right-3 text-slate-600 hover:text-slate-400 opacity-0 group-hover:opacity-100 transition-all">
               <X size={12} />
             </button>
