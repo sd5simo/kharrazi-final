@@ -216,6 +216,7 @@ export default function ClientDetailPage() {
         <div className="space-y-2">
           {damages.length === 0 && <div className="text-center py-12 text-slate-600"><CheckCircle size={28} className="mx-auto mb-2 opacity-30" /><p>Aucun dommage causé par ce client</p></div>}
           {damages.map((d) => {
+            const vehicle = store.getVehicleById(d.vehicleId); // <-- ADD THIS LINE
             return (
               <div key={d.id} className={cn("rounded-xl border p-4", d.repaired ? "border-[#21262d] bg-[#161b22] opacity-70" : "border-brand-orange-500/25 bg-brand-orange-500/5")}>
                 <div className="flex items-start gap-3">
