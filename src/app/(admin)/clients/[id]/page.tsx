@@ -49,7 +49,7 @@ export default function ClientDetailPage() {
     setBlacklistReason("");
   };
 
-  const Field = ({ label, field, type = "text" }: { label: string; field: keyof typeof form; type?: string }) => (
+  const Field = ({ label, field, type = "text" }: { label: string; field: string; type?: string }) => (
     <div>
       <label className="text-[11px] text-slate-500 uppercase tracking-wide font-semibold block mb-1">{label}</label>
       {editing ? (
